@@ -28,7 +28,7 @@ namespace ComicsLibrary.Data.Models
         public string Editor { get; set; }
 
         [Required]
-        public int GCIN { get; set; }
+        public string GCIN { get; set; }
 
         [Required]
         public Status Status { get; set; }
