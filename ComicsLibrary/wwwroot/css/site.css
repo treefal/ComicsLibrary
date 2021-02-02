@@ -17,3 +17,84 @@
         display: none;
     }
 }
+
+/* CUSTOM STYLING */
+
+/* Inventory/Index */
+#comics {
+    margin: 0 auto;
+}
+
+.customTable td {
+    text-align: left;
+    font-size: 1.2em;
+}
+
+#inventoryIndexTable {
+    font-size: 1.3em;
+}
+
+#inventoryIndexTable td {
+    vertical-align: middle;
+}
+
+#inventoryIndexTable tr:hover {
+    background-color: #eee;
+}
+
+.imageCell {
+    width: 128px;
+    padding: 10px;
+}
+
+/* Inventory/Detail */
+#itemTitle {
+    font-size: 2.3em;
+}
+
+#itemPublisher {
+    font-size: 1.6em;
+}
+
+#itemEditor {
+    font-size: 1.6em;
+}
+
+#itemStatus {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#itemIssue {
+    font-size: 1.6em;
+    color: #888;
+}
+
+.itemLabel {
+    font-weight: bold;
+}
+
+.itemValue {
+    text-align: right;
+    font-size: 0.8em;
+}
+
+.availability {
+    padding-top: 20px;
+    font-size: 1.2em;
+}
+
+.detailImage {
+    width: 200px;
+    padding-bottom: 6px;
+}
+
+.detailInfo {
+    padding: 10px;
+    font-size: 1.3em;
+    color: #555;
+}
+
+.detailHeading {
+    padding: 10px;
+}

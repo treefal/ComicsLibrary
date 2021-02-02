@@ -1,9 +1,9 @@
 ﻿@model ComicsLibrary.Models.Inventory.ComicListViewModel
 
-<div id="assets">
+<div id="comics">
     <h3>Comics Inventory</h3>
-    <div id="assetsTable">
-        <table class="table table-condensed" id="catalogIndexTable">
+    <div id="comicsTable">
+        <table class="table table-condensed" id="inventoryIndexTable">
             <thead>
                 <tr>
                     <th>Image</th>
@@ -15,7 +15,7 @@
             <tbody>
                 @foreach (var comic in Model.Comics)
                 {
-                    <tr class="assetRow">
+                    <tr class="comicRow">
                         <td class="">
                             <a asp-controller="Inventory" asp-action="Detail" asp-route-id="@comic.Id">
                                 <img src="@comic.ImageUrl" class="imageCell" />
