@@ -1,0 +1,32 @@
+﻿@model ComicsLibrary.Models.Inventory.ComicListViewModel
+
+<div id="assets">
+    <h3>Comics Inventory</h3>
+    <div id="assetsTable">
+        <table class="table table-condensed" id="catalogIndexTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Publisher</th>
+                    <th>GCIN</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var comic in Model.Comics)
+                {
+                    <tr class="assetRow">
+                        <td class="">
+                            <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@comic.Id">
+                                <img src="@comic.ImageUrl" class="imageCell" />
+                            </a>
+                        </td>
+                        <td class="">@comic.Title</td>
+                        <td class="">@comic.Publisher</td>
+                        <td class="">@comic.GCIN</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

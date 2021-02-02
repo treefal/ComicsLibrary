@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ComicsLibrary.Data\ComicsLibrary.Data.csproj" />
+    <ProjectReference Include="..\ComicsLibrary.Services\ComicsLibrary.Services.csproj" />
   </ItemGroup>
 
 </Project>

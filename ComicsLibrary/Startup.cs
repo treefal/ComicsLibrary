@@ -1,4 +1,6 @@
 ﻿using ComicsLibrary.Data;
+using ComicsLibrary.Services;
+using ComicsLibrary.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,6 +28,8 @@ namespace ComicsLibrary
         {
             services.AddMvc();
             services.AddSingleton(Configuration);
+
+            services.AddScoped<IComicService, ComicService>();
 
             // adding service for DbContext connection using ConnectionString from the appsetting.json file
             services.AddDbContext<ComicsLibraryContext>(options
