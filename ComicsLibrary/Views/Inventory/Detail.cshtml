@@ -1,0 +1,38 @@
+﻿@model ComicsLibrary.Models.Inventory.ComicDetailViewModel
+
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2 class="text-muted">View Comic</h2>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img class="detailImage" src="@Model.ImageUrl" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p id="itemTitle">@Model.Title</p>
+            <p id="itemAuthor">@Model.Publisher</p>
+            <p id="itemAuthor">@Model.Editor</p>
+            <p id="itemType">@Model.Issue</p>
+            <p id="itemStatus">@Model.Status</p>
+            <p id="itemLocation">@Model.Location</p>
+
+        </div>
+        <div class="col-md-4 detailInfo">
+            <table>
+                <tr>
+                    <td class="itemLabel">GCIN: </td>
+                    <td class="itemValue">@Model.GCIN</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Replacement Cost: </td>
+                    <td class="itemValue">@Model.Cost</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -27,16 +27,36 @@ namespace ComicsLibrary.Controllers
                 ImageUrl = result.ImageUrl,
                 // if errors occur, try calling via service
                 Title = result.Title,
-                Issue = result.Issue,
                 Publisher = result.Publisher,
-                Editor = result.Editor,
-                GCIN = _comics.GetGcin(result.Id),
-                NumberOfCopies = result.NumberOfCopies
+                GCIN = _comics.GetGcin(result.Id)
             });
 
             var model = new ComicListViewModel()
             {
                 Comics = comicsList
+            };
+
+            return View(model);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var comic = _comics.GetById(id);
+
+            var model = new ComicDetailViewModel
+            {
+                Id = id,
+                Title = comic.Title,
+                Issue = comic.Issue,
+                Publisher = comic.Publisher,
+                Year = comic.Year,
+                Cost = comic.Cost,
+                Editor = comic.Editor,
+                GCIN = _comics.GetGcin(id),
+                Status = comic.Status.Name,
+                ImageUrl = comic.ImageUrl,
+                NumberOfCopies = comic.NumberOfCopies,
+                Location = _comics.GetComicLocation(id).Name
             };
 
             return View(model);
