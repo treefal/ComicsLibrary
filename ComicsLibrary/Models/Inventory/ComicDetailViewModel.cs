@@ -31,5 +31,17 @@ namespace ComicsLibrary.Models.Inventory
         public int NumberOfCopies { get; set; }
 
         public string Location { get; set; }
+
+        public string CustomerName { get; set; }
+
+        public Checkout LatestCheckout { get; set; }
+        public IEnumerable<CheckoutHistory> CheckoutHistory { get; set; }
+        public IEnumerable<ComicLoanModel> CurrentLoans { get; set; }
+    }
+
+    public class ComicLoanModel
+    {
+        public string CustomerName { get; set; }
+        public string LoanPlaced { get; set; }
     }
 }

@@ -21,6 +21,48 @@
             <p id="itemStatus">@Model.Status</p>
             <p id="itemLocation">@Model.Location</p>
 
+            @if (Model.Status == "Lost")
+            {
+                <p>Comic has been lost. It cannot be checked out.</p>
+                <p>
+                    <a class="btn btn-lg btn-danger" role="button" 
+                       asp-controller="Inventory" asp-action="MarkFound" 
+                       asp-route-id="@Model.Id">
+                        Mark Item Found
+                    </a>
+                </p>
+            }
+
+            @if (Model.Status == "Checked Out")
+            {
+                <p id="itemPatron">Checked out by: @Model.CustomerName</p>
+                <p>
+                    <a class="btn btn-lg btn-success" role="button" 
+                       asp-controller="Inventory" asp-action="CheckIn" 
+                       asp-route-id="@Model.Id">
+                        Check In
+                    </a>
+                </p>
+                <p>
+                    <a class="btn btn-lg btn-warning" role="button" 
+                       asp-controller="Inventory" asp-action="Loan" 
+                       asp-route-id="@Model.Id">
+                        Place Loan
+                    </a>
+                </p>
+            }
+
+            @if (Model.Status == "Available")
+            {
+                <p>
+                    <a class="btn btn-lg btn-info" role="button" 
+                       asp-controller="Inventory" asp-action="Checkout" 
+                       asp-route-id="@Model.Id">
+                        Check Out
+                    </a>
+                </p>
+            }
+
         </div>
         <div class="col-md-4 detailInfo">
             <table>
@@ -34,5 +76,60 @@
                 </tr>
             </table>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Checkout History</h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Date Loaned</th>
+                    <th>Date Returned</th>
+                    <th>Card Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var checkout in Model.CheckoutHistory)
+                {
+                    <tr>
+                        <td>
+                            @checkout.CheckedOut
+                        </td>
+                        <td>
+                            @checkout.CheckedIn
+                        </td>
+                        <td>
+                            @checkout.LibraryCard.Id
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <h4>Current Loans</h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Loan Placed</th>
+                    <th>Customer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var loan in Model.CurrentLoans)
+                {
+                    <tr>
+                        <td>
+                            @loan.LoanPlaced
+                        </td>
+                        <td>
+                            @loan.CustomerName
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
