@@ -1,0 +1,80 @@
+﻿@model ComicsLibrary.Models.Customer.CustomerDetailViewModel
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Customer Information</h2>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <h2>@Model.FullName</h2>
+                    <div class="customerContact">
+                        <div id="customerTel">Library Card ID: @Model.LibraryCardId</div>
+                        <div id="customerAddress">Address: @Model.Address</div>
+                        <div id="customerTel">Telephone: @Model.Telephone</div>
+                        <div id="customerDate">Member Since: @Model.MemberSince</div>
+                        <div id="customerLibrary">Home Library: @Model.HomeLibraryLocation</div>
+                        @if (Model.OverdueFees > 0)
+                        {
+                            <div id="customerHasFees">Current Fees Due: $@Model.OverdueFees</div>
+                        }
+                        else
+                        {
+                            <div id="customerNoFees">No Fees Currently Due.</div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>Assets Currently Checked Out</h4>
+                @if (Model.ComicsCheckedOut.Any())
+                {
+                    <div id="customerAssets">
+                        <ul>
+                            @foreach (var checkout in Model.ComicsCheckedOut)
+                            {
+                                <li>
+                                    @checkout.Comic.Title - (Library Asset ID: @checkout.Comic.Id)
+                                    <ul>
+                                        <li>
+                                            Since: @checkout.Since
+                                        </li>
+                                        <li>
+                                            Due: @checkout.Until
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div>No items currently checked out.</div>
+                }
+            </div>
+
+            <div class="col-md-4">
+                <h4>Assets Currently On Loan</h4>
+                @if (@Model.Loans.Any())
+                {
+                    <div id="customerLoans">
+                        <ul>
+                            @foreach (var loan in @Model.Loans)
+                            {
+                                <li>@loan.Comic.Title - Placed @loan.LoanPlaced.ToString("dd-MM-yy - HH:mm")</li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div>No items on loan.</div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

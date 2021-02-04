@@ -1,0 +1,32 @@
+﻿@model ComicsLibrary.Models.Customer.CustomerListViewModel
+@{ 
+    ViewBag.Title = "Customers Index";
+}
+
+<div id="customerIndex">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="customerIndexTable">
+        <thead>
+            <tr>
+                <th>Profile Link</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Library Card Id</th>
+                <th>Overdue Fees</th>
+                <th>Home Library</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model.Customers)
+            {
+                <tr>
+                    <td><a asp-controller="Customer" asp-action="Detail" asp-route-id="@customer.Id">(Profile)</a></td>
+                    <td>@customer.LastName</td>
+                    <td>@customer.FirstName</td>
+                    <td>@customer.LibraryCardId</td>
+                    <td>@customer.OverdueFees</td>
+                    <td>@customer.HomeLibraryLocation</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

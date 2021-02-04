@@ -21,13 +21,9 @@
 /* CUSTOM STYLING */
 
 /* Inventory/Index */
+
 #comics {
     margin: 0 auto;
-}
-
-.customTable td {
-    text-align: left;
-    font-size: 1.2em;
 }
 
 #inventoryIndexTable {
@@ -48,6 +44,7 @@
 }
 
 /* Inventory/Detail */
+
 #itemTitle {
     font-size: 2.3em;
 }
@@ -97,4 +94,29 @@
 
 .detailHeading {
     padding: 10px;
+}
+
+/* Customer/Index */
+
+.customTable td {
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.customTable th {
+    text-align: left;
+    color: black;
+    font-size: 1.3em;
+}
+
+/* Customer/Detail */
+
+#customerHasFees {
+    color: #c62222;
+    font-weight: bold;
+}
+
+#customerNoFees {
+    color: #2f6fc7;
+    font-weight: bold;
 }
