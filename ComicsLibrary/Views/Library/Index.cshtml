@@ -1,0 +1,29 @@
+﻿@model ComicsLibrary.Models.Library.LibraryListViewModel
+@{
+    ViewBag.Title = "Libraries Index";
+}
+
+<h3>@ViewBag.Title</h3>
+<div id="libraryIndex">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="libraryIndexTable">
+        <thead>
+            <tr>
+                <th>Library Name</th>
+                <th>Open Now</th>
+                <th>Number Of Comics</th>
+                <th>Number of Customers</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var library in Model.Libraries)
+            {
+                <tr>
+                    <td class="strongTd"><a asp-controller="Library" asp-action="Detail" asp-route-id="@library.Id">@library.Name</a></td>
+                    <td>@library.IsOpen</td>
+                    <td>@library.NumberOfComics</td>
+                    <td>@library.NumberOfCustomers</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

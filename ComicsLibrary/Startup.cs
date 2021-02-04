@@ -32,6 +32,7 @@ namespace ComicsLibrary
             services.AddScoped<IComicService, ComicService>();
             services.AddScoped<ICheckoutService, CheckoutService>();
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ILibraryLocationService, LibraryLocationService>();
 
             // adding service for DbContext connection using ConnectionString from the appsetting.json file
             services.AddDbContext<ComicsLibraryContext>(options

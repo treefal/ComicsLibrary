@@ -1,0 +1,58 @@
+﻿@model ComicsLibrary.Models.Library.LibraryDetailViewModel
+@{ 
+    ViewBag.Title = Model.Name;
+}
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Library Information</h2>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <img src="@Model.ImageUrl" width=100% height=100% />
+        </div>
+        <div class="row libraryInfo">
+            <div class="col-md-8">
+                <div>
+                    <h2>@Model.Name</h2>
+                    <div class="libraryContact">
+                        <div id="libraryAddress">Address: @Model.Address</div>
+                        <div id="libraryTel">Telephone: @Model.Telephone</div>
+                    </div>
+                    <div id="libraryDescription">
+                        <p class="caption">@Model.Description</p>
+                    </div>
+
+                    <div id="libraryHours">
+                        <ul>
+                            @foreach (var day in @Model.HoursOpen)
+                            {
+                                <li>@day</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 detailInfo">
+                <table>
+                    <tr>
+                        <td class="itemLabel">Date Opened: </td>
+                        <td class="itemValue">@Model.OpenDate</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Number Of Customers: </td>
+                        <td class="itemValue">@Model.NumberOfCustomers</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Number of Comics: </td>
+                        <td class="itemValue">@Model.NumberOfComics</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Value of Comics: </td>
+                        <td class="itemValue">$@Model.TotalComicsValue</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

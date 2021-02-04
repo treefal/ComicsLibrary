@@ -109,6 +109,10 @@
     font-size: 1.3em;
 }
 
+.strongTd {
+    font-weight: bold;
+}
+
 /* Customer/Detail */
 
 #customerHasFees {
@@ -119,4 +123,20 @@
 #customerNoFees {
     color: #2f6fc7;
     font-weight: bold;
+}
+
+/* Library/Detail */
+
+.libraryInfo {
+    padding-top: 30px;
+}
+
+#libraryDescription {
+    width: 500px;
+    padding: 18px 0 12px 4px;
+}
+
+.libraryContact {
+    padding: 12px 0 16px 0;
+    font-size: 1.2em;
 }
