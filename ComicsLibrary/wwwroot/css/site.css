@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
@@ -19,6 +19,100 @@
 }
 
 /* CUSTOM STYLING */
+
+/* _Layout */
+
+.logo {
+    font-family: "Coda";
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo > a {
+    color: #ddd;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.logo > a:hover {
+    color: #fff;
+    transition: ease;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.page-content {
+    padding: 20px;
+    margin: 10px auto;
+}
+
+.page-heading {
+    color: #e9e8e7;
+}
+
+.splash {
+    background-image: url("/images/background/inventory.jpg");
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+
+.card-icon {
+    color: #777;
+    font-size: 40px;
+    padding: 24px;
+    -webkit-border-radius: 1100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.icon-wrapper {
+    display: table-cell;
+}
+
+.demo-card-square.mdl-card {
+    width: 320px;
+    height: 320px;
+}
+
+.demo-card-square > .mdl-card__title {
+    color: #fff;
+}
+
+/* Home */
+
+.homeLabel {
+    background-color: rgba(0,0,0,0.3);
+    padding: 4px;
+}
+
+#inventory {
+    background-image: url('/images/background/bookshelf.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+#customers {
+    background-image: url('/images/background/customer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+#libraries {
+    background-image: url('/images/background/library.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
 
 /* Inventory/Index */
 
