@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 0px;
     padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Wrapping element */
@@ -228,9 +230,21 @@
 #libraryDescription {
     width: 500px;
     padding: 18px 0 12px 4px;
+    font-size: 1.3em;
 }
 
 .libraryContact {
     padding: 12px 0 16px 0;
-    font-size: 1.2em;
+    font-size: 1.0em;
+}
+
+.jumbotron {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.library-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
